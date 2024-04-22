@@ -5,12 +5,14 @@ image: gitpod/workspace-full:latest
 tasks:
   - name: Install dependencies
     init: |
+      cd holy-grail/
       npm install
       gp sync-done dependencies
   - name: Run local web server
     command: |
       gp sync-await dependencies
-      cd holy-grail/ && ng serve --open --port 3001
+      cd holy-grail/ 
+      ng serve --open --port 3001
 
 # List the ports to expose. Learn more: https://www.gitpod.io/docs/configure/workspaces/ports
 ports:
