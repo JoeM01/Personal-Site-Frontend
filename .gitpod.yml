@@ -5,7 +5,7 @@ image: gitpod/workspace-full:latest
 tasks:
   - name: Install dependencies
     init: |
-      npm install -g @angular/cli
+      npm install
       gp sync-done dependencies
   - name: Run local web server
     command: |
