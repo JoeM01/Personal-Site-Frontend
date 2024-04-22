@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MetamaskService } from '../metamask.service';
 
 @Component({
   selector: 'header',
@@ -9,4 +10,10 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  constructor(private metamaskService: MetamaskService) {}
+
+  connectMetaMask(): void {
+    this.metamaskService.connectAccount();
+
+  }
 }
