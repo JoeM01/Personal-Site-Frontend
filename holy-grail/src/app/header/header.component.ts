@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MetamaskService } from '../metamask.service';
+import { WagmiService } from '../wagmi.service';
 
 @Component({
   selector: 'header',
@@ -10,5 +10,13 @@ import { MetamaskService } from '../metamask.service';
 })
 export class HeaderComponent {
 
-  constructor() {}
+  constructor(private wagmiService: WagmiService) {}
+
+  connectWallet(){
+    this.wagmiService.connectWallet()
+  }
+
+  signMessage(){
+    this.wagmiService.signMessage()
+  }
 }
