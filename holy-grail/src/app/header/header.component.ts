@@ -10,10 +10,5 @@ import { MetamaskService } from '../metamask.service';
 })
 export class HeaderComponent {
 
-  constructor(private metamaskService: MetamaskService) {}
-
-  connectMetaMask(): void {
-    this.metamaskService.connectAccount();
-
-  }
+  constructor() {}
 }
