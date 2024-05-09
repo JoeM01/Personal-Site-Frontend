@@ -19,3 +19,12 @@
         @apply font-body text-small;
       }
 }
+
+@layer components{
+  .active-header{
+    @apply bg-accent-2
+  }
+  .resume_header{
+    @apply p-2
+  }
+}

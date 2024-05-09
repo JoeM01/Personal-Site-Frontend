@@ -1,0 +1,24 @@
+<app-back-btn/>
+
+<div class="flex flex-col items-left justify-center h-screen ml-64">
+    <div class="text-text space-y-20 max-w-56">
+        <div (click)="setActive('Summary')" [ngClass]="{'active-header': activeSection === 'Summary'}" class="resume_header">
+            <h2 class="font-bold cursor-pointer w-auto select-none">Summary</h2>
+        </div>
+        <div (click)="setActive('Skills')" [ngClass]="{'active-header': activeSection === 'Skills'}" class="resume_header">
+            <h2 class="font-bold cursor-pointer w-auto select-none">Skills</h2>
+        </div>
+        <div (click)="setActive('Experience')" [ngClass]="{'active-header': activeSection === 'Experience'}" class="resume_header">
+            <h2 class="font-bold cursor-pointer w-auto select-none">Experience</h2>
+        </div>
+        <div (click)="setActive('Projects')" [ngClass]="{'active-header': activeSection === 'Projects'}" class="resume_header">
+            <h2 class="font-bold cursor-pointer w-auto select-none">Projects</h2>
+        </div>
+        <div (click)="setActive('Education')" [ngClass]="{'active-header': activeSection === 'Education'}" class="resume_header">
+            <h2 class="font-bold cursor-pointer w-auto select-none">Education</h2>
+        </div>
+        <div (click)="setActive('Certifications')" [ngClass]="{'active-header': activeSection === 'Certifications'}" class="resume_header">
+            <h2 class="font-bold cursor-pointer w-auto select-none">Certifications</h2>
+        </div>
+    </div>
+</div>
