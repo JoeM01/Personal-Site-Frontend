@@ -19,7 +19,10 @@ module.exports = {
       fontFamily: {
         heading: ['Karla', 'sans-serif'],
         body: ['Inconsolata', 'monospace'],
-    }
+    },
+    screens: {         
+      'xxl': '2600px',       
+              },
   },
   plugins: [],
 }

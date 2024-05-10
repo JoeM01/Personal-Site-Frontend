@@ -1,8 +1,8 @@
 <app-back-btn />
 
-<div class="flex items-center min-h-screen w-3/4 mx-auto ">
+<div class="flex items-center min-h-screen w-3/4 xxl:w-1/3 mx-auto ">
   <div class="flex items-start w-full">
-  <div class="text-text space-y-20 max-w-56 mr-10 flex-none w-full">
+  <div class="text-text space-y-20 max-w-56 mr-10 flex-none w-full ">
     <div
       (click)="setActive('Summary')"
       [ngClass]="{ 'active-header': activeSection === 'Summary' }"
@@ -51,7 +51,7 @@
   <div class="text-text flex-1">
     <ng-container [ngSwitch]="activeSection">
       <div
-        class="p-2 bg-accent-2 transition-all ease-linear duration-300"
+        class="p-2 active-header"
         *ngSwitchCase="'Summary'"
       >
         <h3>
@@ -61,7 +61,7 @@
         </h3>
       </div>
       <div
-        class="p-2 bg-accent-2 transition-all ease-linear duration-300"
+        class="p-2 active-header"
         *ngSwitchCase="'Skills'"
       >
         <h3>
@@ -73,7 +73,7 @@
         </h3>
       </div>
       <div
-        class="p-2 bg-accent-2 transition-all ease-linear duration-300"
+        class="p-2 active-header"
         *ngSwitchCase="'Experience'"
       >
         <h3 class>DevOps Support Engineer | Ionic at OutSystems</h3>
@@ -98,7 +98,7 @@
         </p>
       </div>
       <div
-        class="p-2 bg-accent-2 transition-all ease-linear duration-300"
+        class="p-2 active-header"
         *ngSwitchCase="'Projects'"
       >
         <h3>Cloud Resume | joe-martinez.com</h3>
@@ -115,24 +115,25 @@
         </p>
       </div>
       <div
-        class="p-2 bg-accent-2 transition-all ease-linear duration-300"
+        class="p-2 active-header"
         *ngSwitchCase="'Education'"
       >
-        <h3>Bachelor of Science in Information Technology</h3>
+        <h3>Bachelor of Science in Information Technology | Florida International University</h3>
         <p class="mt-2">
-          Florida International University<br/>
           2021<br/>
           Miami, Florida
         </p>
       </div>
       <div
-        class="p-2 bg-accent-2 transition-all ease-linear duration-300"
+        class="p-2 active-header"
         *ngSwitchCase="'Certifications'"
       >
         <h3>Amazon Web Services Solutions Architect</h3>
         <p>Associate Level<br>
-            2023<br>
+            Issued: 2023<br>
             ID 84Y2M8L2T1141554</p>
+        <h3 class="pt-4">HashiCorp Certified: Terraform Associate (003)</h3>
+        <p>Issued: 2024</p>
       </div>
     </ng-container>
   </div>
