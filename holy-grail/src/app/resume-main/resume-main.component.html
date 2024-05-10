@@ -1,7 +1,8 @@
 <app-back-btn />
 
-<div class="grid grid-flow-col auto-cols-auto ml-64 mr-64 my-64 gap-16">
-  <div class="text-text space-y-20 max-w-56">
+<div class="flex items-center min-h-screen w-3/4 mx-auto ">
+  <div class="flex items-start w-full">
+  <div class="text-text space-y-20 max-w-56 mr-10 flex-none w-full">
     <div
       (click)="setActive('Summary')"
       [ngClass]="{ 'active-header': activeSection === 'Summary' }"
@@ -47,7 +48,7 @@
       </h2>
     </div>
   </div>
-  <div class="text-text space-y-20 max-w-7xl">
+  <div class="text-text flex-1">
     <ng-container [ngSwitch]="activeSection">
       <div
         class="p-2 bg-accent-2 transition-all ease-linear duration-300"
@@ -135,4 +136,5 @@
       </div>
     </ng-container>
   </div>
+</div>
 </div>
