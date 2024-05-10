@@ -1,6 +1,6 @@
 <app-back-btn/>
 
-<div class="flex flex-col items-left justify-center h-screen ml-64">
+<div class="grid grid-flow-col auto-cols-auto ml-64 mr-64 my-64 gap-16">
     <div class="text-text space-y-20 max-w-56">
         <div (click)="setActive('Summary')" [ngClass]="{'active-header': activeSection === 'Summary'}" class="resume_header">
             <h2 class="font-bold cursor-pointer w-auto select-none">Summary</h2>
@@ -20,5 +20,15 @@
         <div (click)="setActive('Certifications')" [ngClass]="{'active-header': activeSection === 'Certifications'}" class="resume_header">
             <h2 class="font-bold cursor-pointer w-auto select-none">Certifications</h2>
         </div>
+    </div>
+    <div class="text-text space-y-20 max-w-7xl">
+        <ng-container [ngSwitch]="activeSection">
+            <div class="p-2" *ngSwitchCase="'Summary'"><h3>Experienced DevOps Support Engineer with 3 years of experience in CI/CD, monitoring, and observability. Proficient in managing infrastructure and ensuring smooth deployment processes.</h3></div>
+            <div class="p-2" *ngSwitchCase="'Skills'"><h3>Content for Skills...</h3></div>
+            <div class="p-2" *ngSwitchCase="'Experience'"><h3>Content for Experience...</h3></div>
+            <div class="p-2" *ngSwitchCase="'Projects'"><h3>Content for Projects...</h3></div>
+            <div class="p-2" *ngSwitchCase="'Education'"><h3>Content for Education...</h3></div>
+            <div class="p-2" *ngSwitchCase="'Certifications'"><h3>Content for Certifications...</h3></div>
+        </ng-container>
     </div>
 </div>

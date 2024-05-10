@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './resume-main.component.scss'
 })
 export class ResumeMainComponent {
-  activeSection = 'summary';
+  activeSection = 'Summary';
 
     setActive(section: string) {
       this.activeSection = section;

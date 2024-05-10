@@ -22,7 +22,7 @@
 
 @layer components{
   .active-header{
-    @apply bg-accent-2
+    @apply bg-accent-2 transition-all ease-linear duration-300 
   }
   .resume_header{
     @apply p-2
