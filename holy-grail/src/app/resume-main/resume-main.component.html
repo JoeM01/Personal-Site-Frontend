@@ -1,34 +1,138 @@
-<app-back-btn/>
+<app-back-btn />
 
 <div class="grid grid-flow-col auto-cols-auto ml-64 mr-64 my-64 gap-16">
-    <div class="text-text space-y-20 max-w-56">
-        <div (click)="setActive('Summary')" [ngClass]="{'active-header': activeSection === 'Summary'}" class="resume_header">
-            <h2 class="font-bold cursor-pointer w-auto select-none">Summary</h2>
-        </div>
-        <div (click)="setActive('Skills')" [ngClass]="{'active-header': activeSection === 'Skills'}" class="resume_header">
-            <h2 class="font-bold cursor-pointer w-auto select-none">Skills</h2>
-        </div>
-        <div (click)="setActive('Experience')" [ngClass]="{'active-header': activeSection === 'Experience'}" class="resume_header">
-            <h2 class="font-bold cursor-pointer w-auto select-none">Experience</h2>
-        </div>
-        <div (click)="setActive('Projects')" [ngClass]="{'active-header': activeSection === 'Projects'}" class="resume_header">
-            <h2 class="font-bold cursor-pointer w-auto select-none">Projects</h2>
-        </div>
-        <div (click)="setActive('Education')" [ngClass]="{'active-header': activeSection === 'Education'}" class="resume_header">
-            <h2 class="font-bold cursor-pointer w-auto select-none">Education</h2>
-        </div>
-        <div (click)="setActive('Certifications')" [ngClass]="{'active-header': activeSection === 'Certifications'}" class="resume_header">
-            <h2 class="font-bold cursor-pointer w-auto select-none">Certifications</h2>
-        </div>
+  <div class="text-text space-y-20 max-w-56">
+    <div
+      (click)="setActive('Summary')"
+      [ngClass]="{ 'active-header': activeSection === 'Summary' }"
+      class="resume_header"
+    >
+      <h2 class="font-bold cursor-pointer w-auto select-none">Summary</h2>
     </div>
-    <div class="text-text space-y-20 max-w-7xl">
-        <ng-container [ngSwitch]="activeSection">
-            <div class="p-2" *ngSwitchCase="'Summary'"><h3>Experienced DevOps Support Engineer with 3 years of experience in CI/CD, monitoring, and observability. Proficient in managing infrastructure and ensuring smooth deployment processes.</h3></div>
-            <div class="p-2" *ngSwitchCase="'Skills'"><h3>Content for Skills...</h3></div>
-            <div class="p-2" *ngSwitchCase="'Experience'"><h3>Content for Experience...</h3></div>
-            <div class="p-2" *ngSwitchCase="'Projects'"><h3>Content for Projects...</h3></div>
-            <div class="p-2" *ngSwitchCase="'Education'"><h3>Content for Education...</h3></div>
-            <div class="p-2" *ngSwitchCase="'Certifications'"><h3>Content for Certifications...</h3></div>
-        </ng-container>
+    <div
+      (click)="setActive('Skills')"
+      [ngClass]="{ 'active-header': activeSection === 'Skills' }"
+      class="resume_header"
+    >
+      <h2 class="font-bold cursor-pointer w-auto select-none">Skills</h2>
     </div>
+    <div
+      (click)="setActive('Experience')"
+      [ngClass]="{ 'active-header': activeSection === 'Experience' }"
+      class="resume_header"
+    >
+      <h2 class="font-bold cursor-pointer w-auto select-none">Experience</h2>
+    </div>
+    <div
+      (click)="setActive('Projects')"
+      [ngClass]="{ 'active-header': activeSection === 'Projects' }"
+      class="resume_header"
+    >
+      <h2 class="font-bold cursor-pointer w-auto select-none">Projects</h2>
+    </div>
+    <div
+      (click)="setActive('Education')"
+      [ngClass]="{ 'active-header': activeSection === 'Education' }"
+      class="resume_header"
+    >
+      <h2 class="font-bold cursor-pointer w-auto select-none">Education</h2>
+    </div>
+    <div
+      (click)="setActive('Certifications')"
+      [ngClass]="{ 'active-header': activeSection === 'Certifications' }"
+      class="resume_header"
+    >
+      <h2 class="font-bold cursor-pointer w-auto select-none">
+        Certifications
+      </h2>
+    </div>
+  </div>
+  <div class="text-text space-y-20 max-w-7xl">
+    <ng-container [ngSwitch]="activeSection">
+      <div
+        class="p-2 bg-accent-2 transition-all ease-linear duration-300"
+        *ngSwitchCase="'Summary'"
+      >
+        <h3>
+          Experienced DevOps Support Engineer with 3 years of experience in
+          CI/CD, monitoring, and observability. Proficient in managing
+          infrastructure and ensuring smooth deployment processes.
+        </h3>
+      </div>
+      <div
+        class="p-2 bg-accent-2 transition-all ease-linear duration-300"
+        *ngSwitchCase="'Skills'"
+      >
+        <h3>
+          Technical Skills: CI/CD, Github Actions, Azure DevOps, Aws, Docker,
+          Kubernetes, Aws, Terraform, Bash, Linux, Prometheus, Grafana, Splunk
+          <br />
+          <br />
+          Languages: English (Fluent), Spanish (Fluent)
+        </h3>
+      </div>
+      <div
+        class="p-2 bg-accent-2 transition-all ease-linear duration-300"
+        *ngSwitchCase="'Experience'"
+      >
+        <h3 class>DevOps Support Engineer | Ionic at OutSystems</h3>
+        <p class="mt-2 mb-2">
+          Streamlined customer application debugging and integration using tools
+          like GitHub Actions, Azure DevOps, and AWS S3. I specialize in
+          optimizing CI/CD processes for Cordova + Capacitor applications and
+          have enhanced client adoption of DevOps practices through effective
+          onboardings and reviews. Additionally, I manage complex
+          troubleshooting across multiple platforms, collaborate on urgent
+          technical issues, and contribute to product improvements based on
+          customer usage trends.
+        </p>
+        <h3>Service Assurance Engineer III | American Express</h3>
+        <p class="mt-2">
+          Facilitated collaboration between production and development teams,
+          developed Python-based automation tools to reduce daily operational
+          toil, and led annual security and disaster recovery initiatives. I
+          ensured high system availability using monitoring tools like Splunk,
+          Prometheus, and Grafana, and swiftly resolved the majority of
+          technical customer issues, enhancing customer satisfaction.
+        </p>
+      </div>
+      <div
+        class="p-2 bg-accent-2 transition-all ease-linear duration-300"
+        *ngSwitchCase="'Projects'"
+      >
+        <h3>Cloud Resume | joe-martinez.com</h3>
+        <p class="mt-2">
+          • Leveraged AWS services such as S3, CloudFront, API Gateway, Lambda,
+          and DynamoDB to create a serverless architecture.<br />
+          • Wrote Lambda functions in Python to handle back-end processing.<br />
+          • Managed Infrastructure as Code with Terraform for efficient resource
+          provisioning.<br />
+          • Implemented a CI/CD pipeline using GitHub Actions for seamless
+          updates and deployments.<br />
+          • Ensured secure handling of AWS credentials during the development
+          and deployment process.
+        </p>
+      </div>
+      <div
+        class="p-2 bg-accent-2 transition-all ease-linear duration-300"
+        *ngSwitchCase="'Education'"
+      >
+        <h3>Bachelor of Science in Information Technology</h3>
+        <p class="mt-2">
+          Florida International University<br/>
+          2021<br/>
+          Miami, Florida
+        </p>
+      </div>
+      <div
+        class="p-2 bg-accent-2 transition-all ease-linear duration-300"
+        *ngSwitchCase="'Certifications'"
+      >
+        <h3>Amazon Web Services Solutions Architect</h3>
+        <p>Associate Level<br>
+            2023<br>
+            ID 84Y2M8L2T1141554</p>
+      </div>
+    </ng-container>
+  </div>
 </div>
