@@ -50,14 +50,14 @@
     </div>
     <div class="text-text flex-1">
       <ng-container [ngSwitch]="activeSection">
-        <div class="p-2 animate-fade-in bg-accent-2" *ngSwitchCase="'Summary'">
+        <div class="p-2 bg-accent-2 opacity-0 transition-opacity" *ngSwitchCase="'Summary'" [ngClass]="{ 'opacity-100': activeSection === 'Summary'}">
           <h3>
             Experienced DevOps Support Engineer with 3 years of experience in
             CI/CD, monitoring, and observability. Proficient in managing
             infrastructure and ensuring smooth deployment processes.
           </h3>
         </div>
-        <div class="p-2 animate-fade-in bg-accent-2" *ngSwitchCase="'Skills'">
+        <div class="p-2" *ngSwitchCase="'Skills'">
           <h3>
             Technical Skills: CI/CD, Github Actions, Azure DevOps, Aws, Docker,
             Kubernetes, Aws, Terraform, Bash, Linux, Prometheus, Grafana, Splunk
@@ -66,7 +66,7 @@
             Languages: English (Fluent), Spanish (Fluent)
           </h3>
         </div>
-        <div class="p-2 animate-fade-in bg-accent-2" *ngSwitchCase="'Experience'">
+        <div class="p-2" *ngSwitchCase="'Experience'">
           <h3 class>DevOps Support Engineer | Ionic at OutSystems</h3>
           <p class="mt-2 mb-2">
             Streamlined customer application debugging and integration using
@@ -88,7 +88,7 @@
             technical customer issues, enhancing customer satisfaction.
           </p>
         </div>
-        <div class="p-2 animate-fade-in bg-accent-2" *ngSwitchCase="'Projects'">
+        <div class="p-2" *ngSwitchCase="'Projects'">
           <h3>Cloud Resume | joe-martinez.com</h3>
           <p class="mt-2">
             • Leveraged AWS services such as S3, CloudFront, API Gateway,
@@ -102,7 +102,7 @@
             and deployment process.
           </p>
         </div>
-        <div class="p-2 animate-fade-in bg-accent-2" *ngSwitchCase="'Education'">
+        <div class="p-2" *ngSwitchCase="'Education'">
           <h3>
             Bachelor of Science in Information Technology | Florida
             International University
@@ -112,7 +112,7 @@
             Miami, Florida
           </p>
         </div>
-        <div class="p-2 animate-fade-in bg-accent-2" *ngSwitchCase="'Certifications'">
+        <div class="p-2" *ngSwitchCase="'Certifications'">
           <h3>Amazon Web Services Solutions Architect</h3>
           <p>
             Associate Level<br />

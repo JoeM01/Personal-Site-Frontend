@@ -22,9 +22,22 @@
 
 @layer components{
   .active-header{
-    @apply bg-accent-2 transition-all ease-linear duration-300 
+    @apply bg-accent-2 transition-all ease-linear duration-500
   }
   .resume_header{
     @apply p-2
   }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 500ms ease-in;
 }
