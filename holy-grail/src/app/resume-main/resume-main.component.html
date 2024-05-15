@@ -1,64 +1,64 @@
 <app-back-btn />
 
-<div class="flex items-center min-h-screen w-3/4 xxl:w-1/3 mx-auto">
-  <div class="flex items-start w-full">
-    <div class="text-text space-y-20 max-w-56 mr-10 flex-none w-full">
+<div class="flex flex-col lg:items-center h-screen w-3/4 xxl:w-1/3 mx-auto justify-center">
+  <div class="flex flex-col sm:flex-row items-start sm:justify-center sm:mt-0 w-full sm:w-3/4 h-full sm:h-3/6 mt-32">
+    <div class="flex text-text sm:text-heading sm:space-y-20 sm:max-w-56 sm:mr-10 flex-row flex-wrap items-center sm:items-start sm:justify-normal justify-center sm:w-full mb-4">
       <div
         (click)="setActive('Summary')"
         [ngClass]="{ 'active-header': activeSection === 'Summary' }"
         class="resume_header"
       >
-        <h2 class="font-bold cursor-pointer w-auto select-none">Summary</h2>
+        <h2 class="font-bold text-sm sm:text-heading sm:leading-8 cursor-pointer w-auto select-none">Summary</h2>
       </div>
       <div
         (click)="setActive('Skills')"
         [ngClass]="{ 'active-header': activeSection === 'Skills' }"
         class="resume_header"
       >
-        <h2 class="font-bold cursor-pointer w-auto select-none">Skills</h2>
+        <h2 class="font-bold  text-sm sm:text-heading sm:leading-8 cursor-pointer w-auto select-none">Skills</h2>
       </div>
       <div
         (click)="setActive('Experience')"
         [ngClass]="{ 'active-header': activeSection === 'Experience' }"
         class="resume_header"
       >
-        <h2 class="font-bold cursor-pointer w-auto select-none">Experience</h2>
+        <h2 class="font-bold  text-sm sm:text-heading sm:leading-8 cursor-pointer w-auto select-none">Experience</h2>
       </div>
       <div
         (click)="setActive('Projects')"
         [ngClass]="{ 'active-header': activeSection === 'Projects' }"
         class="resume_header"
       >
-        <h2 class="font-bold cursor-pointer w-auto select-none">Projects</h2>
+        <h2 class="font-bold  text-sm sm:text-heading sm:leading-8 cursor-pointer w-auto select-none">Projects</h2>
       </div>
       <div
         (click)="setActive('Education')"
         [ngClass]="{ 'active-header': activeSection === 'Education' }"
         class="resume_header"
       >
-        <h2 class="font-bold cursor-pointer w-auto select-none">Education</h2>
+        <h2 class="font-bold  text-sm sm:text-heading sm:leading-8 cursor-pointer w-auto select-none">Education</h2>
       </div>
       <div
         (click)="setActive('Certifications')"
         [ngClass]="{ 'active-header': activeSection === 'Certifications' }"
         class="resume_header"
       >
-        <h2 class="font-bold cursor-pointer w-auto select-none">
+        <h2 class="font-bold  text-sm sm:text-heading sm:leading-8 cursor-pointer w-auto select-none">
           Certifications
         </h2>
       </div>
     </div>
-    <div class="text-text flex-1">
+    <div class="flex flex-initial mx-auto sm:flex-1 text-text text-xs sm:text-base ">
       <ng-container [ngSwitch]="activeSection">
-        <div class="p-2 animate-fade-in bg-accent-2" *ngSwitchCase="'Summary'">
-          <h3>
+        <div class="p-2 animate-fade-in bg-accent-2 w-full" *ngSwitchCase="'Summary'">
+          <h3 class="text-sm sm:text-heading sm:leading-8 ">
             Experienced DevOps Support Engineer with 3 years of experience in
             CI/CD, monitoring, and observability. Proficient in managing
             infrastructure and ensuring smooth deployment processes.
           </h3>
         </div>
-        <div class="p-2 animate-fade-in bg-accent-2" *ngSwitchCase="'Skills'">
-          <h3>
+        <div class="p-2 animate-fade-in bg-accent-2 w-full" *ngSwitchCase="'Skills'">
+          <h3  class="text-sm sm:text-heading sm:leading-8 ">
             Technical Skills: CI/CD, Github Actions, Azure DevOps, Aws, Docker,
             Kubernetes, Aws, Terraform, Bash, Linux, Prometheus, Grafana, Splunk
             <br />
@@ -66,9 +66,9 @@
             Languages: English (Fluent), Spanish (Fluent)
           </h3>
         </div>
-        <div class="p-2 animate-fade-in bg-accent-2" *ngSwitchCase="'Experience'">
-          <h3 class>DevOps Support Engineer | Ionic at OutSystems</h3>
-          <p class="mt-2 mb-2">
+        <div class="p-2 animate-fade-in bg-accent-2 w-full" *ngSwitchCase="'Experience'">
+          <h3  class="text-sm sm:text-heading sm:leading-8 ">DevOps Support Engineer | Ionic at OutSystems</h3>
+          <p  class="text-xs sm:text-base mt-2 mb-2 sm:leading-6 ">
             Streamlined customer application debugging and integration using
             tools like GitHub Actions, Azure DevOps, and AWS S3. I specialize in
             optimizing CI/CD processes for Cordova + Capacitor applications and
@@ -78,8 +78,8 @@
             technical issues, and contribute to product improvements based on
             customer usage trends.
           </p>
-          <h3>Service Assurance Engineer III | American Express</h3>
-          <p class="mt-2">
+          <h3 class="text-sm sm:text-heading sm:leading-8 ">Service Assurance Engineer III | American Express</h3>
+          <p  class="text-xs sm:text-base mt-2 sm:leading-6 ">
             Facilitated collaboration between production and development teams,
             developed Python-based automation tools to reduce daily operational
             toil, and led annual security and disaster recovery initiatives. I
@@ -88,9 +88,9 @@
             technical customer issues, enhancing customer satisfaction.
           </p>
         </div>
-        <div class="p-2 animate-fade-in bg-accent-2" *ngSwitchCase="'Projects'">
-          <h3>Cloud Resume | joe-martinez.com</h3>
-          <p class="mt-2">
+        <div class="p-2 animate-fade-in bg-accent-2 w-full" *ngSwitchCase="'Projects'">
+          <h3 class="text-sm sm:text-heading sm:leading-8 ">Cloud Resume | joe-martinez.com</h3>
+          <p  class="text-xs sm:text-base mt-2 sm:leading-6 ">
             • Leveraged AWS services such as S3, CloudFront, API Gateway,
             Lambda, and DynamoDB to create a serverless architecture.<br />
             • Wrote Lambda functions in Python to handle back-end processing.<br />
@@ -102,25 +102,25 @@
             and deployment process.
           </p>
         </div>
-        <div class="p-2 animate-fade-in bg-accent-2" *ngSwitchCase="'Education'">
-          <h3>
+        <div class="p-2 animate-fade-in bg-accent-2 w-full" *ngSwitchCase="'Education'">
+          <h3 class="text-sm sm:text-heading sm:leading-8 ">
             Bachelor of Science in Information Technology | Florida
             International University
           </h3>
-          <p class="mt-2">
+          <p  class="text-xs sm:text-base mt-2 sm:leading-6 ">
             2021<br />
             Miami, Florida
           </p>
         </div>
-        <div class="p-2 animate-fade-in bg-accent-2" *ngSwitchCase="'Certifications'">
-          <h3>Amazon Web Services Solutions Architect</h3>
-          <p>
+        <div class="p-2 animate-fade-in bg-accent-2 w-full" *ngSwitchCase="'Certifications'">
+          <h3 class="text-sm sm:text-heading sm:leading-8 ">Amazon Web Services Solutions Architect</h3>
+          <p class="text-xs sm:text-base sm:leading-6 " >
             Associate Level<br />
             Issued: 2023<br />
             ID 84Y2M8L2T1141554
           </p>
-          <h3 class="pt-4">HashiCorp Certified: Terraform Associate (003)</h3>
-          <p>Issued: 2024</p>
+          <h3  class="text-sm sm:text-heading pt-4 sm:leading-8 ">HashiCorp Certified: Terraform Associate (003)</h3>
+          <p class="text-xs sm:text-base sm:leading-6 " >Issued: 2024</p>
         </div>
       </ng-container>
     </div>
