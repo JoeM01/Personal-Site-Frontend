@@ -6,15 +6,15 @@ on:
       - main
 
 jobs:
-  deploy:
+  Push_Img_to_ECR:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout
 
     - name: Set up AWS CLI
-      uses: aws-actions/configure-aws-credentials@v1
+      uses: aws-actions/configure-aws-credentials
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -23,7 +23,14 @@ jobs:
     - name: Retrieve authentication token and authenticate Docker client to registry.
       run: |
         aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 471112593558.dkr.ecr.us-east-1.amazonaws.com
+
+    - name: Build Image and Tag accordingly
+      run: |
         cd ./holy-grail
         docker build -t personal-site .
         docker tag personal-site:latest 471112593558.dkr.ecr.us-east-1.amazonaws.com/personal-site:latest
+        docker push 471112593558.dkr.ecr.us-east-1.amazonaws.com/personal-site:latest
+
+    - name: Push Image
+      run: |
         docker push 471112593558.dkr.ecr.us-east-1.amazonaws.com/personal-site:latest
