@@ -22,6 +22,10 @@ ports:
     description: Port 3001 for the frontend
     port: 3001
     onOpen: open-browser
+  - name: NoderServer
+    description: Port 8081 for docker node server
+    port: 8081
+    onOpen: open-browser
 
 # Learn more from ready-to-use templates: https://www.gitpod.io/docs/introduction/getting-started/quickstart
 vscode:
