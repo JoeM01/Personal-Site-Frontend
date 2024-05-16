@@ -29,7 +29,6 @@ jobs:
         cd ./holy-grail
         docker build -t personal-site .
         docker tag personal-site:latest 471112593558.dkr.ecr.us-east-1.amazonaws.com/personal-site:latest
-        docker push 471112593558.dkr.ecr.us-east-1.amazonaws.com/personal-site:latest
 
     - name: Push Image
       run: |
