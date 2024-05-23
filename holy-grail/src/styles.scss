@@ -1,5 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
+
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -40,4 +43,12 @@
 
 .animate-fade-in {
   animation: fadeIn 500ms ease-in;
+}
+
+/* styles.css or web-app-modal.component.scss */
+::ng-deep .mat-dialog-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }

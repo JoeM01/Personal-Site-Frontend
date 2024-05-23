@@ -1,8 +1,31 @@
-<div class="chat-container">
-  <div>
-  </div>
-  <form [formGroup]="chatForm" (ngSubmit)="sendMessage()">
-    <input formControlName="message" placeholder="Type your message..." />
-    <button type="submit">Send</button>
+<app-back-btn />
+
+<app-web-app-modal [showModal]="showModal" (close)="closeModal()"/>
+
+
+<div class="flex flex-col justify-center items-center w-full h-screen">
+  <form [formGroup]="chatForm" (ngSubmit)="sendMessage()" class="w-4/5 max-w-7xl flex flex-col items-center space-y-4">
+    <div class="w-full flex">
+      <input class="w-full mr-2 px-4 py-2 border rounded text-base bg-text text-background" formControlName="message" placeholder="Type your message..." />
+      <button [disabled]="!chatForm.valid" 
+      [ngClass]="{
+        'bg-[#69bddd] text-bg focus:ring-2 focus:ring-[#69bddd] rounded shadow px-4 py-2 transition-colors duration-150': true,
+        'hover:bg-[#5aa6c3] active:bg-[#4b8ea8] transition-all': chatForm.valid,
+        'opacity-50 cursor-not-allowed transition-all': !chatForm.valid
+      }"  type="submit">Send</button>
+     
+    </div> 
+    <div class="w-full mt-4 p-4 border border-text rounded h-72 text-text overflow-y-auto relative">
+      <div *ngIf="isLoading" class="transition-opacity duration-500" [ngClass]="{ 'opacity-100': isLoading, 'opacity-0': !isLoading }">
+        <div  class="animate-pulse">
+        Loading...
+      </div>
+      </div>
+      
+      <div *ngIf="!isLoading" class="transition-opacity duration-500" [ngClass]="{ 'opacity-100': !isLoading, 'opacity-0': isLoading }">
+        {{ response }}
+      </div>
+    </div>
   </form>
+  
 </div>
