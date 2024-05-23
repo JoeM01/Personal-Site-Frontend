@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { v4 as uuidv4 } from 'uuid';
 
 @Injectable({
@@ -7,19 +8,26 @@ import { v4 as uuidv4 } from 'uuid';
 export class SessionService {
   private sessionKey: string;
   private readonly sessionKeyName = 'sessionKey';
+  private isBrowser: boolean;
 
-  constructor() {
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+    this.isBrowser = isPlatformBrowser(platformId);
     this.sessionKey = this.getSessionKeyFromStorage() || this.generateSessionKey();
   }
 
   private generateSessionKey(): string {
     const newSessionKey = uuidv4();
-    localStorage.setItem(this.sessionKeyName, newSessionKey);
+    if (this.isBrowser) {
+      localStorage.setItem(this.sessionKeyName, newSessionKey);
+    }
     return newSessionKey;
   }
 
   private getSessionKeyFromStorage(): string | null {
-    return localStorage.getItem(this.sessionKeyName);
+    if (this.isBrowser) {
+      return localStorage.getItem(this.sessionKeyName);
+    }
+    return null;
   }
 
   getSessionKey(): string {

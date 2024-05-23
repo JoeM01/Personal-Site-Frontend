@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID  } from '@angular/core';
 import { OpenAIServiceService } from '../open-ai-service.service';
 import { HttpClientModule } from '@angular/common/http';
-import { CommonModule } from '@angular/common';
-import { MatDialog } from '@angular/material/dialog';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { FormGroup, FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { BackBtnComponent } from '../back-btn/back-btn.component';
 import { interval } from 'rxjs';
@@ -21,13 +20,15 @@ export class WebAppMainComponent implements OnInit{
   response = '';
   isLoading: boolean = false;
   showModal: boolean = false;
+  private isBrowser: boolean;
 
   chatForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private langchainService: OpenAIServiceService){
+  constructor(private fb: FormBuilder, private langchainService: OpenAIServiceService,  @Inject(PLATFORM_ID) private platformId: Object){
     this.chatForm = this.fb.group({
       message: ['', [Validators.required, Validators.minLength(1)]]
     });
+    this.isBrowser = isPlatformBrowser(platformId);
   }
 
   ngOnInit(): void {
@@ -36,6 +37,12 @@ export class WebAppMainComponent implements OnInit{
 
   closeModal(): void {
     this.showModal = false;
+    if (this.isBrowser) {
+      const savedResponse = localStorage.getItem('lastResponse');
+      if (savedResponse) {
+        this.response = savedResponse;
+      }
+    }
   }
 
   sendMessage(){
@@ -59,6 +66,15 @@ export class WebAppMainComponent implements OnInit{
 
     source.subscribe(index => {
       this.response += letters[index];
+      if (index === letters.length - 1) {
+        this.saveResponse(this.response);
+      }
     });
+  }
+
+  saveResponse(response: string): void {
+    if (this.isBrowser) {
+      localStorage.setItem('lastResponse', response);
+    }
   }
 }
