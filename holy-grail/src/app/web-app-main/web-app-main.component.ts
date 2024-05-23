@@ -1,32 +1,36 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { OpenAIServiceService } from '../open-ai-service.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { FormGroup, FormBuilder, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-web-app-main',
   standalone: true,
-  imports: [HttpClientModule, CommonModule],
+  imports: [HttpClientModule, CommonModule, ReactiveFormsModule],
   templateUrl: './web-app-main.component.html',
   styleUrl: './web-app-main.component.scss'
 })
-export class WebAppMainComponent {
+export class WebAppMainComponent{
+  userInput = '';
   response = '';
 
-  constructor(private langchainService: OpenAIServiceService){}
+  chatForm: FormGroup;
 
-  getResponse() {
-    this.langchainService.generateResponse().subscribe(
-      (res) => {
-        this.response = res;
-        console.log(this.response)
-      },
-      (err) => {
-        console.error('Error fetching response:', err);
-        this.response = 'Error generating response';
-      }
-    );
+  constructor(private fb: FormBuilder, private langchainService: OpenAIServiceService){
+    this.chatForm = this.fb.group({
+      message: ['']
+    });
   }
 
-
+  sendMessage(){
+    if(this.chatForm.valid) {
+      const message = this.chatForm.get('message')?.value;
+      this.langchainService.sendMessage(message, "front-end").subscribe(aiResponse => {
+        this.userInput=''
+        this.response = aiResponse
+        console.log(this.response)
+      });
+    }
+  }
 }
