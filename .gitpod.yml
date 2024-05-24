@@ -5,7 +5,7 @@ tasks:
   - name: Install dependencies
     init: |
       cd holy-grail/
-      npm install
+      npm install 
       npm install -g @angular/cli
       gp sync-done dependencies
   - name: Run local web server
