@@ -7,7 +7,7 @@ import { SessionService } from './session.service';
   providedIn: 'root'
 })
 export class OpenAIServiceService {
-  private apiUrl = 'https://joigf7v59i.execute-api.us-east-1.amazonaws.com/generate';
+  private apiUrl = 'https://tz3zwtwrnb.execute-api.us-east-1.amazonaws.com/generate';
 
   constructor(private http: HttpClient, private sessionService: SessionService) {}
 
